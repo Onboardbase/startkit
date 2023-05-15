@@ -24,7 +24,6 @@ func NewPromptContent(input PromptContentInput) promptContent {
 }
 
 func GetInputFromPrompt(pc promptContent) string {
-	
 	validate := func(input string) error {
         if len(input) <= 0 {
             return errors.New(pc.errorMsg)
