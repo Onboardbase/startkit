@@ -1,27 +1,40 @@
 package kit
 
 import (
+	"fmt"
+
 	"github.com/Onboardbase/obbkitv2/utils"
 )
 
 const (
-	Nestjs = "NestJS"
-	Nextjs = "NextJS"
+	Nestjs  = "NestJS"
+	Nextjs  = "NextJS"
 	Reactjs = "React.js"
-	Vuejs = "VueJs"
+	Vuejs   = "VueJs"
 )
 
-func CreateProject() {
+func Init() {
 	projectName, projectType := askForProjectNameAndType()
 
-	if projectType == Nestjs {
+	switch projectType {
+	case Nestjs:
 		initNestJsProject(projectName)
+	case Nextjs:
+		initNextProject(projectName)
+	case Reactjs:
+		initReactProject(projectName)
+	case Vuejs:
+		initVueProject(projectName)
+	default:
+		fmt.Println("Project type not supported yet")
 	}
 }
 
 func askForProjectNameAndType() (string, string) {
 	projectName := collectProjectName()
 	projectType := collectProjectType()
+
+	projectName = utils.NormalizeToKebabOrSnakeCase(projectName)
 	return projectName, projectType
 }
 
@@ -39,7 +52,8 @@ func collectProjectType() string {
 		Label:    "\U000023F3 Please select a project type.",
 		ErrorMsg: "\U0000274C You must select a project type",
 	})
-	items := []string{"NestJS", "NextJS", "React.js", "VueJs"}
+	items := []string{Nestjs, Nextjs, Reactjs, Vuejs}
 	projectType := utils.GetSelectInputFromPrompt(projectTypePromptContent, items)
 	return projectType
 }
+

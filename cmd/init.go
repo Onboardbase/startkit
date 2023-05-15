@@ -8,10 +8,11 @@ import (
 // initCmd represents the init command
 var initCmd = &cobra.Command{
 	Use:   "init",
-	Short: "I",
+	Short: "Initialize a new project",
 	Run: func(cmd *cobra.Command, args []string) {
-		kit.CreateProject()
+		kit.Init()
 	},
+	Aliases: []string{"i"},
 }
 
 func init() {

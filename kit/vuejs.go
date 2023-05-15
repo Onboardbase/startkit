@@ -4,13 +4,13 @@ import (
 	"fmt"
 )
 
-func initNestJsProject(projectName string) {
-	createProjectCmd := fmt.Sprintf("npx @nestjs/cli new %s", projectName)
+func initVueProject(projectName string) {
+	createProjectCmd := fmt.Sprintf("npm create vue@3 %s", projectName)
 
 	InitFrameworkProject(InitFrameworkProjectInput{
 		ProjectName:                 projectName,
 		ShellCommandToCreateProject: createProjectCmd,
 		StartCommand:                "yarn start",
-		FrameworkName:               "Nest",
+		FrameworkName:               "Vue",
 	})
 }

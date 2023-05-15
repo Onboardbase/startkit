@@ -1,13 +1,14 @@
 package utils
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 )
 
 type RunShellCommandInput struct {
-	ShellToUse string
-	Command string
+	ShellToUse       string
+	Command          string
 	DirectoryToRunIn string
 }
 
@@ -19,6 +20,9 @@ func RunShellCommand(input RunShellCommandInput) (err error) {
 	if input.DirectoryToRunIn != "" {
 		cmd.Dir = input.DirectoryToRunIn
 	}
-	err = cmd.Run()
+	if err = cmd.Run(); err != nil {
+		fmt.Println("could not run command: ", err)
+		os.Exit(1)
+	}
 	return
 }

@@ -2,8 +2,6 @@ package kit
 
 import (
 	"fmt"
-	"os"
-	"path"
 
 	"github.com/Onboardbase/obbkitv2/utils"
 )
@@ -14,28 +12,44 @@ type FrameworkHandler interface {
 
 type CreateFrameworkProjectInput struct {
 	ShellCommandToCreateProject string
-	ProjectName  string
+	ProjectName                 string
+	FrameworkName               string
 }
 
-type SetupOnboardbaseInput struct {
-	StartCommand string
-	ProjectFolderName  string
+type InitFrameworkProjectInput struct {
+	ProjectName                 string
+	ShellCommandToCreateProject string
+	StartCommand                string
+	FrameworkName               string
 }
-func (h *nestJSHandler) SetupOnboardbase(input SetupOnboardbaseInput) error {
-	currentDir, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
-	}
-	projectDir := path.Join(currentDir, input.ProjectFolderName)
-	cmd := fmt.Sprintf("onboardbase auth -c \"%s\"", input.StartCommand)
-	err = utils.RunShellCommand(utils.RunShellCommandInput{
+
+func InitFrameworkProject(input InitFrameworkProjectInput) {
+	projectFolderName := CreateFrameworkProject(CreateFrameworkProjectInput{
+		FrameworkName:               input.FrameworkName,
+		ShellCommandToCreateProject: input.ShellCommandToCreateProject,
+		ProjectName:                 input.ProjectName,
+	})
+
+	SetupOnboardbase(OnboardbaseSetupInput{
+		StartCommand:      input.StartCommand,
+		ProjectFolderName: projectFolderName,
+	})
+}
+
+func CreateFrameworkProject(input CreateFrameworkProjectInput) (projectFolderName string) {
+	message := fmt.Sprintf("|\t\U000023F3 Creating %s project...", input.FrameworkName)
+	fmt.Println("\n---------------------------------------------------------------------")
+	fmt.Println(message)
+	fmt.Println("---------------------------------------------------------------------")
+
+	err := utils.RunShellCommand(utils.RunShellCommandInput{
 		ShellToUse: "bash",
-		Command:    cmd,
-		DirectoryToRunIn:  projectDir,
+		Command:    input.ShellCommandToCreateProject,
 	})
 	if err != nil {
 		fmt.Println(err)
-		return err
+		return ""
 	}
-	return nil
+	projectFolderName = input.ProjectName
+	return
 }

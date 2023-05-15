@@ -28,9 +28,9 @@ func GetInputFromPrompt(pc promptContent) string {
         if len(input) <= 0 {
             return errors.New(pc.errorMsg)
         }
-		justChars := regexp.MustCompile(`^[A-Za-z]*$`).MatchString(input)
+		justChars := regexp.MustCompile(`^[A-Za-z0-9]*$`).MatchString(input)
 		if !justChars {
-			return errors.New("❌ You must provide a project name with only letters")
+			return errors.New("❌ You must provide a project name with only letters and numbers")
 		}
         return nil
     }
