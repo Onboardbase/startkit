@@ -2,39 +2,40 @@ package kit
 
 import (
 	"fmt"
-	"os"
-	"path"
 
 	"github.com/Onboardbase/obbkitv2/utils"
 )
 
-func initNestJsProject(projectName string) {
+type nestJSHandler struct {
+}
+
+func (h *nestJSHandler) CreateProject(input CreateFrameworkProjectInput) (projectFolderName string) {
 	fmt.Println("\t \U000023F3 Creating NestJS project...")
-	cmd := fmt.Sprintf("npx @nestjs/cli new %s", projectName)
-	 err := utils.RunShellCommand(utils.RunShellCommandInput{
+	cmd := fmt.Sprintf("npx @nestjs/cli new %s", input.ProjectName)
+	err := utils.RunShellCommand(utils.RunShellCommandInput{
 		ShellToUse: "bash",
 		Command:    cmd,
 	})
 	if err != nil {
 		fmt.Println(err)
-		return
+		return ""
 	}
+	projectFolderName = utils.NormalizeToKebabOrSnakeCase(input.ProjectName)
+	return
+}
 
-	cmd = "onboardbase auth -c \"yarn start\""
-	currentDir, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
-	}
+func initNestJsProject(projectName string) {
+	handler := &nestJSHandler{}
 
-	projectName = utils.NormalizeToKebabOrSnakeCase(projectName)
-	fmt.Println("projectName", projectName)
-	projectDir := path.Join(currentDir, projectName)
-	err = utils.RunShellCommand(utils.RunShellCommandInput{
-		ShellToUse: "bash",
-		Command:    cmd,
-		Directory:  projectDir,
+	createProjectCmd := fmt.Sprintf("npx @nestjs/cli new %s", projectName)
+	projectFolderName := handler.CreateProject(CreateFrameworkProjectInput{
+		ProjectName:                 projectName,
+		ShellCommandToCreateProject: createProjectCmd,
 	})
-	if err != nil {
-		fmt.Println(err)
-	}
+
+	startProjectCmd := "yarn start"
+	handler.SetupOnboardbase(SetupOnboardbaseInput{
+		StartCommand:      startProjectCmd,
+		ProjectFolderName: projectFolderName,
+	})
 }
