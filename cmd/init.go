@@ -5,25 +5,28 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// initCmd represents the init command
 var initCmd = &cobra.Command{
-	Use:   "init",
-	Short: "Initialize a new project",
+	Use:     "init",
+	Short:   "Initialize a new project",
+	Aliases: []string{"i"},
 	RunE: func(cmd *cobra.Command, args []string) error {
-		gitUrl, err := cmd.Flags().GetString("from-git")
-		if gitUrl == "" || err != nil {
-			kit.Init()
-			return nil
-		}
+		return handleInit(cmd)
+	},
+}
+
+func init() {
+	rootCmd.PersistentFlags().StringP(FROM_GIT_FLAG, "g", "", "Initialize a project from a git repository")
+	rootCmd.AddCommand(initCmd)
+}
+
+func handleInit(cmd *cobra.Command) error {
+	gitUrl, err := cmd.Flags().GetString(FROM_GIT_FLAG)
+	if err == nil && gitUrl != "" {
 		kit.InitFromGit(kit.InitFromGitInput{
 			GitRepoURL: gitUrl,
 		})
 		return nil
-	},
-	Aliases: []string{"i"},
-}
-
-func init() {
-	rootCmd.PersistentFlags().StringP("from-git", "g", "", "Initialize a project from a git repository")
-	rootCmd.AddCommand(initCmd)
+	}
+	kit.Init()
+	return nil
 }
