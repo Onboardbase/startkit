@@ -14,6 +14,7 @@ type CreateFrameworkProjectInput struct {
 	ShellCommandToCreateProject string
 	ProjectName                 string
 	FrameworkName               string
+	FirstStepsCommands          initiationCommands
 }
 
 type InitFrameworkProjectInput struct {
@@ -21,6 +22,26 @@ type InitFrameworkProjectInput struct {
 	ShellCommandToCreateProject string
 	StartCommand                string
 	FrameworkName               string
+	FirstStepsCommands          initiationCommands
+}
+
+type initiationCommands []string
+
+func (ic initiationCommands) Run(dirToRunIn string) {
+	if len(ic) == 0 {
+		return
+	}
+	fmt.Println("\n---------------------------------------------------------------------")
+	fmt.Println("|\t\U000023F3 Running steps to configure project...")
+	fmt.Println("---------------------------------------------------------------------")
+	for _, command := range ic {
+		fmt.Println("🔧", command)
+		utils.RunShellCommand(utils.RunShellCommandInput{
+			ShellToUse:       "bash",
+			Command:          command,
+			DirectoryToRunIn: dirToRunIn,
+		})
+	}
 }
 
 func InitFrameworkProject(input InitFrameworkProjectInput) {
@@ -31,8 +52,9 @@ func InitFrameworkProject(input InitFrameworkProjectInput) {
 	})
 
 	SetupOnboardbase(OnboardbaseSetupInput{
-		StartCommand:      input.StartCommand,
-		ProjectFolderName: projectFolderName,
+		StartCommand:       input.StartCommand,
+		ProjectFolderName:  projectFolderName,
+		FirstStepsCommands: input.FirstStepsCommands,
 	})
 }
 

@@ -10,7 +10,7 @@ func initReactProject(projectName string) {
 	InitFrameworkProject(InitFrameworkProjectInput{
 		ProjectName:                 projectName,
 		ShellCommandToCreateProject: createProjectCmd,
-		StartCommand:                "yarn start",
+		StartCommand:                "npm run start",
 		FrameworkName:               "React",
 	})
 }

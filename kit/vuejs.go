@@ -10,7 +10,10 @@ func initVueProject(projectName string) {
 	InitFrameworkProject(InitFrameworkProjectInput{
 		ProjectName:                 projectName,
 		ShellCommandToCreateProject: createProjectCmd,
-		StartCommand:                "yarn start",
+		StartCommand:                "npm run dev",
 		FrameworkName:               "Vue",
+		FirstStepsCommands: initiationCommands{
+			"npm install",
+		},
 	})
 }
