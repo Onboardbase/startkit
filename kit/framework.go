@@ -6,27 +6,7 @@ import (
 	"github.com/Onboardbase/obbkitv2/utils"
 )
 
-type FrameworkHandler interface {
-	CreateProject(input CreateFrameworkProjectInput) (projectFolderName string) // returns the name of the folder the project was initialized in
-}
-
-type CreateFrameworkProjectInput struct {
-	ShellCommandToCreateProject string
-	ProjectName                 string
-	FrameworkName               string
-	FirstStepsCommands          initiationCommands
-}
-
-type InitFrameworkProjectInput struct {
-	ProjectName                 string
-	ShellCommandToCreateProject string
-	StartCommand                string
-	FrameworkName               string
-	FirstStepsCommands          initiationCommands
-}
-
 type initiationCommands []string
-
 func (ic initiationCommands) Run(dirToRunIn string) {
 	if len(ic) == 0 {
 		return
@@ -44,21 +24,36 @@ func (ic initiationCommands) Run(dirToRunIn string) {
 	}
 }
 
-func InitFrameworkProject(input InitFrameworkProjectInput) {
-	projectFolderName := CreateFrameworkProject(CreateFrameworkProjectInput{
+type initFrameworkProjectInput struct {
+	ProjectName                 string
+	ShellCommandToCreateProject string
+	StartCommand                string
+	FrameworkName               string
+	FirstStepsCommands          initiationCommands
+}
+
+type createFrameworkProjectInput struct {
+	ShellCommandToCreateProject string
+	ProjectName                 string
+	FrameworkName               string
+	FirstStepsCommands          initiationCommands
+}
+
+func initFrameworkProject(input initFrameworkProjectInput) {
+	projectFolderName := createFrameworkProject(createFrameworkProjectInput{
 		FrameworkName:               input.FrameworkName,
 		ShellCommandToCreateProject: input.ShellCommandToCreateProject,
 		ProjectName:                 input.ProjectName,
 	})
 
-	SetupOnboardbase(OnboardbaseSetupInput{
+	setupOnboardbase(onboardbaseSetupInput{
 		StartCommand:       input.StartCommand,
 		ProjectFolderName:  projectFolderName,
 		FirstStepsCommands: input.FirstStepsCommands,
 	})
 }
 
-func CreateFrameworkProject(input CreateFrameworkProjectInput) (projectFolderName string) {
+func createFrameworkProject(input createFrameworkProjectInput) (projectFolderName string) {
 	message := fmt.Sprintf("|\t\U000023F3 Creating %s project...", input.FrameworkName)
 	fmt.Println("\n---------------------------------------------------------------------")
 	fmt.Println(message)
@@ -74,3 +69,26 @@ func CreateFrameworkProject(input CreateFrameworkProjectInput) (projectFolderNam
 	projectFolderName = input.ProjectName
 	return
 }
+
+type onboardbaseSetupInput struct {
+	StartCommand       string
+	ProjectFolderName  string
+	FirstStepsCommands initiationCommands
+}
+
+func setupOnboardbase(input onboardbaseSetupInput) error {
+	projectDir := utils.GetProjectPath(input.ProjectFolderName)
+	input.FirstStepsCommands.Run(projectDir)
+	cmd := fmt.Sprintf("onboardbase auth -c \"%s\" --overwrite", input.StartCommand)
+	err := utils.RunShellCommand(utils.RunShellCommandInput{
+		ShellToUse:       "bash",
+		Command:          cmd,
+		DirectoryToRunIn: projectDir,
+	})
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	return nil
+}
+

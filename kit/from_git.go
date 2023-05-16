@@ -10,24 +10,24 @@ type InitFromGitInput struct {
 	GitRepoURL string
 }
 
-type CloneGitRepoInput struct {
+type cloneGitRepoInput struct {
 	GitRepoURL  string
 	ProjectName string
 }
 
 func InitFromGit(input InitFromGitInput) {
 	projectName := collectProjectName()
-	cloneGitRepo(CloneGitRepoInput{
+	cloneGitRepo(cloneGitRepoInput{
 		GitRepoURL:  input.GitRepoURL,
 		ProjectName: projectName,
 	})
-	SetupOnboardbase(OnboardbaseSetupInput{
+	setupOnboardbase(onboardbaseSetupInput{
 		StartCommand:      `echo "Done🙌🏾"`,
 		ProjectFolderName: projectName,
 	})
 }
 
-func cloneGitRepo(input CloneGitRepoInput) (){
+func cloneGitRepo(input cloneGitRepoInput) (){
 	cloneCommand := fmt.Sprintf("git clone %s %s", input.GitRepoURL, input.ProjectName)
 	utils.RunShellCommand(utils.RunShellCommandInput{
 		ShellToUse:       "bash",

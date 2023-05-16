@@ -6,7 +6,7 @@ import (
 
 func initReactProject(projectName string) {
 	createProjectCmd := fmt.Sprintf("npx create-react-app %s", projectName)
-	InitFrameworkProject(InitFrameworkProjectInput{
+	initFrameworkProject(initFrameworkProjectInput{
 		ProjectName:                 projectName,
 		ShellCommandToCreateProject: createProjectCmd,
 		StartCommand:                "npm run start",

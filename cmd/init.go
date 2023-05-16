@@ -30,3 +30,4 @@ func handleInit(cmd *cobra.Command) error {
 	kit.Init()
 	return nil
 }
+

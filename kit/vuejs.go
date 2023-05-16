@@ -6,7 +6,7 @@ import (
 
 func initVueProject(projectName string) {
 	createProjectCmd := fmt.Sprintf("npm create vue@3 %s", projectName)
-	InitFrameworkProject(InitFrameworkProjectInput{
+	initFrameworkProject(initFrameworkProjectInput{
 		ProjectName:                 projectName,
 		ShellCommandToCreateProject: createProjectCmd,
 		StartCommand:                "npm run dev",
