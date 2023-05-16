@@ -63,7 +63,6 @@ func CreateFrameworkProject(input CreateFrameworkProjectInput) (projectFolderNam
 	fmt.Println("\n---------------------------------------------------------------------")
 	fmt.Println(message)
 	fmt.Println("---------------------------------------------------------------------")
-
 	err := utils.RunShellCommand(utils.RunShellCommandInput{
 		ShellToUse: "bash",
 		Command:    input.ShellCommandToCreateProject,

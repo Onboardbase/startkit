@@ -14,9 +14,7 @@ type OnboardbaseSetupInput struct {
 
 func SetupOnboardbase(input OnboardbaseSetupInput) error {
 	projectDir := utils.GetProjectPath(input.ProjectFolderName)
-
 	input.FirstStepsCommands.Run(projectDir)
-
 	cmd := fmt.Sprintf("onboardbase auth -c \"%s\" --overwrite", input.StartCommand)
 	err := utils.RunShellCommand(utils.RunShellCommandInput{
 		ShellToUse:       "bash",

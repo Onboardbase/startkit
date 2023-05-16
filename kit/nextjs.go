@@ -6,7 +6,6 @@ import (
 
 func initNextProject(projectName string) {
 	createProjectCmd := fmt.Sprintf("npx create-next-app@latest %s", projectName)
-
 	InitFrameworkProject(InitFrameworkProjectInput{
 		ProjectName:                 projectName,
 		ShellCommandToCreateProject: createProjectCmd,

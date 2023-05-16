@@ -62,13 +62,11 @@ func GetSelectInputFromPrompt(pc promptContent, items []string) string {
     index := -1
     var result string
     var err error
-
 	 templates := &promptui.SelectTemplates{
         Label:   "{{ . }}?",
 		Active: "\U0001F449 {{ . | cyan }}",
 		Selected: "\U0001F44D Project Type: {{ . | green | bold }} ",
     }
-
     for index < 0 {
         prompt := promptui.Select{
             Label:    pc.label,

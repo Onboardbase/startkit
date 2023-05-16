@@ -11,7 +11,6 @@ func NormalizeToKebabOrSnakeCase(str string) string {
 	// Replace camelCase with dashes.
 	str = STRING_DECAMELIZE_REGEXP.ReplaceAllString(str, "$1-$2")
 	str = strings.ToLower(str)
-	
 	// Replace spaces with dashes.
 	str = STRING_DASHERIZE_REGEXP.ReplaceAllString(str, "-")
 	return str
