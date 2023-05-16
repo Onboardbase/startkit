@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/Onboardbase/obbkitv2/kit"
 	"github.com/spf13/cobra"
 )
@@ -13,13 +11,10 @@ var initCmd = &cobra.Command{
 	Short: "Initialize a new project",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		gitUrl, err := cmd.Flags().GetString("from-git")
-
 		if gitUrl == "" || err != nil {
 			kit.Init()
 			return nil
 		}
-
-		fmt.Println("Initializing from git repo: ", gitUrl)
 		kit.InitFromGit(kit.InitFromGitInput{
 			GitRepoURL: gitUrl,
 		})
