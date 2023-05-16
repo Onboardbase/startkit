@@ -6,6 +6,7 @@ import (
 	"github.com/Onboardbase/obbkitv2/project_types"
 	"github.com/Onboardbase/obbkitv2/utils"
 )
+
 func Init() {
 	projectName, projectType := askForProjectNameAndType()
 
@@ -48,4 +49,3 @@ func collectProjectType() string {
 	projectType := utils.GetSelectInputFromPrompt(projectTypePromptContent, items)
 	return projectType
 }
-

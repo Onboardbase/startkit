@@ -27,12 +27,11 @@ func InitFromGit(input InitFromGitInput) {
 	})
 }
 
-func cloneGitRepo(input cloneGitRepoInput) (){
+func cloneGitRepo(input cloneGitRepoInput) {
 	cloneCommand := fmt.Sprintf("git clone %s %s", input.GitRepoURL, input.ProjectName)
 	utils.RunShellCommand(utils.RunShellCommandInput{
-		ShellToUse:       "bash",
-		Command:          cloneCommand,
+		ShellToUse: "bash",
+		Command:    cloneCommand,
 	})
 	return
 }
-

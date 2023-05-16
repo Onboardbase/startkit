@@ -11,8 +11,8 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "obbkit",
-	Short: "CLI tool for generating boilerplates projects with Onboardbase completely setup.",
+	Use:     "obbkit",
+	Short:   "CLI tool for generating boilerplates projects with Onboardbase completely setup.",
 	Aliases: []string{"obb"},
 	Version: "0.0.1",
 }
@@ -30,5 +30,3 @@ func init() {
 	versionTemplate := `{{printf "%s: %s - version %s\n" .Name .Short .Version}}`
 	rootCmd.SetVersionTemplate(versionTemplate)
 }
-
-

@@ -6,7 +6,7 @@ import (
 	"path"
 )
 
-func GetProjectPath(folderName string) (string) {
+func GetProjectPath(folderName string) string {
 	currentDir, err := os.Getwd()
 	if err != nil {
 		fmt.Println(err)

@@ -7,6 +7,7 @@ import (
 )
 
 type initiationCommands []string
+
 func (ic initiationCommands) Run(dirToRunIn string) {
 	if len(ic) == 0 {
 		return
@@ -91,4 +92,3 @@ func setupOnboardbase(input onboardbaseSetupInput) error {
 	}
 	return nil
 }
-
