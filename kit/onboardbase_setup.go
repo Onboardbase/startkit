@@ -2,8 +2,6 @@ package kit
 
 import (
 	"fmt"
-	"os"
-	"path"
 
 	"github.com/Onboardbase/obbkitv2/utils"
 )
@@ -15,16 +13,12 @@ type OnboardbaseSetupInput struct {
 }
 
 func SetupOnboardbase(input OnboardbaseSetupInput) error {
-	currentDir, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
-	}
-	projectDir := path.Join(currentDir, input.ProjectFolderName)
+	projectDir := utils.GetProjectPath(input.ProjectFolderName)
 
 	input.FirstStepsCommands.Run(projectDir)
-	
-	cmd := fmt.Sprintf("onboardbase auth -c \"%s\"", input.StartCommand)
-	err = utils.RunShellCommand(utils.RunShellCommandInput{
+
+	cmd := fmt.Sprintf("onboardbase auth -c \"%s\" --overwrite", input.StartCommand)
+	err := utils.RunShellCommand(utils.RunShellCommandInput{
 		ShellToUse:       "bash",
 		Command:          cmd,
 		DirectoryToRunIn: projectDir,

@@ -33,8 +33,6 @@ func Init() {
 func askForProjectNameAndType() (string, string) {
 	projectName := collectProjectName()
 	projectType := collectProjectType()
-
-	projectName = utils.NormalizeToKebabOrSnakeCase(projectName)
 	return projectName, projectType
 }
 
@@ -44,6 +42,7 @@ func collectProjectName() string {
 		ErrorMsg: "\U0000274C You must provide a project name",
 	})
 	projectName := utils.GetInputFromPrompt(projectNamePromptContent)
+	projectName = utils.NormalizeToKebabOrSnakeCase(projectName)
 	return projectName
 }
 
