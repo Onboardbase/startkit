@@ -9,8 +9,9 @@ import (
 )
 
 type OnboardbaseSetupInput struct {
-	StartCommand string
+	StartCommand       string
 	ProjectFolderName  string
+	FirstStepsCommands initiationCommands
 }
 
 func SetupOnboardbase(input OnboardbaseSetupInput) error {
@@ -19,11 +20,14 @@ func SetupOnboardbase(input OnboardbaseSetupInput) error {
 		fmt.Println(err)
 	}
 	projectDir := path.Join(currentDir, input.ProjectFolderName)
+
+	input.FirstStepsCommands.Run(projectDir)
+	
 	cmd := fmt.Sprintf("onboardbase auth -c \"%s\"", input.StartCommand)
 	err = utils.RunShellCommand(utils.RunShellCommandInput{
-		ShellToUse: "bash",
-		Command:    cmd,
-		DirectoryToRunIn:  projectDir,
+		ShellToUse:       "bash",
+		Command:          cmd,
+		DirectoryToRunIn: projectDir,
 	})
 	if err != nil {
 		fmt.Println(err)
