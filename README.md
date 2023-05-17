@@ -83,3 +83,5 @@ func collectProjectType() string {
 }
 
 ```
+
+We have a simple sequence diagram for the project here `docs/images/OBB_Kit_flow.png`
