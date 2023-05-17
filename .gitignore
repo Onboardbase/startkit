@@ -22,3 +22,5 @@ go.work
 
 obbkit
 docs/.DS_Store
+
+dist/
