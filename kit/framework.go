@@ -3,7 +3,7 @@ package kit
 import (
 	"fmt"
 
-	"github.com/Onboardbase/obbkitv2/utils"
+	"github.com/Onboardbase/obbkit/utils"
 )
 
 type initiationCommands []string
