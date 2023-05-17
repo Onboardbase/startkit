@@ -47,7 +47,13 @@ func collectProjectType() string {
 		Label:    "\U000023F3 Please select a project type.",
 		ErrorMsg: "\U0000274C You must select a project type",
 	})
-	items := []string{project_types.Nestjs, project_types.Nextjs, project_types.Reactjs, project_types.Vuejs, project_types.Flask}
+	items := []string {
+		project_types.Nestjs,
+		project_types.Nextjs,
+		project_types.Reactjs,
+		project_types.Vuejs,
+		project_types.Flask,
+	}
 	projectType := utils.GetSelectInputFromPrompt(projectTypePromptContent, items)
 	return projectType
 }

@@ -48,3 +48,38 @@ obbkit init --from-git https://github.com/Onboardbase/Flask-Starterkit.git
 
 ## Contributing
 
+### Local Setup
+Clone this repo and run `go mod`. You can then start the application with `go run main.go`
+
+### Adding More Project Types
+
+Support for other frameworks are welcome. The easiest way to add a new project type support is to extend our git integration.
+
+If you want to a new project type and there is a popular, open source community-vested boilerplate repository for that project type, you can make a PR to include that. The `kit/flask.go` is a reference for how to do just that.
+
+You will then need to add the project type to the `project_types/types` const, this is the current list we have:
+```
+const (
+	Nestjs  = "NestJS"
+	Nextjs  = "NextJS"
+	Reactjs = "React.js"
+	Vuejs   = "VueJs"
+	Flask   = "Flask"
+)
+```
+
+Afterwards, you will need to include the new project type inside of `kit/init.go`:
+```
+func collectProjectType() string {
+    ...
+	items := []string {
+		project_types.Nestjs,
+		project_types.Nextjs,
+		project_types.Reactjs,
+		project_types.Vuejs,
+		project_types.Flask,
+	}
+    ...
+}
+
+```
