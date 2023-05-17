@@ -17,6 +17,10 @@ type cloneGitRepoInput struct {
 
 func InitFromGit(input InitFromGitInput) {
 	projectName := collectProjectName()
+	gitCloneAndSetupOnboardbase(input, projectName)
+}
+
+func gitCloneAndSetupOnboardbase(input InitFromGitInput, projectName string) {
 	cloneGitRepo(cloneGitRepoInput{
 		GitRepoURL:  input.GitRepoURL,
 		ProjectName: projectName,
@@ -33,5 +37,4 @@ func cloneGitRepo(input cloneGitRepoInput) {
 		ShellToUse: "bash",
 		Command:    cloneCommand,
 	})
-	return
 }

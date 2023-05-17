@@ -19,6 +19,8 @@ func Init() {
 		initReactProject(projectName)
 	case project_types.Vuejs:
 		initVueProject(projectName)
+	case project_types.Flask:
+		initFlaskProject(projectName)
 	default:
 		fmt.Println("Project type not supported yet")
 	}
@@ -45,7 +47,7 @@ func collectProjectType() string {
 		Label:    "\U000023F3 Please select a project type.",
 		ErrorMsg: "\U0000274C You must select a project type",
 	})
-	items := []string{project_types.Nestjs, project_types.Nextjs, project_types.Reactjs, project_types.Vuejs}
+	items := []string{project_types.Nestjs, project_types.Nextjs, project_types.Reactjs, project_types.Vuejs, project_types.Flask}
 	projectType := utils.GetSelectInputFromPrompt(projectTypePromptContent, items)
 	return projectType
 }

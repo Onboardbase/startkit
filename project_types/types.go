@@ -5,4 +5,5 @@ const (
 	Nextjs  = "NextJS"
 	Reactjs = "React.js"
 	Vuejs   = "VueJs"
+	Flask   = "Flask"
 )
