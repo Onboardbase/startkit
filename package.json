@@ -1,0 +1,39 @@
+{
+  "name": "@onboardbase/onboardbasekit",
+  "version": "0.0.3",
+  "description": "**Onboardbase Kit** (onboardbasekit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "postinstall": "go-npm install",
+    "preuninstall": "go-npm uninstall"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onboardbase/onboardbasekit.git"
+  },
+  "keywords": [
+    "onboardbase",
+    "secops",
+    "envs",
+    "secrets",
+    "environments"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onboardbase/onboardbasekit/issues"
+  },
+  "dependencies": {
+    "global": "^4.4.0",
+    "go-npm": "^0.1.9"
+  },
+  "goBinary": {
+    "name": "onboardbasekit",
+    "path": "./bin",
+    "url": "https://github.com/Onboardbase/onboardbasekit/releases/download/v{{version}}/onboardbasekit_{{version}}_{{platform}}_{{arch}}.tar.gz"
+  },
+  "homepage": "https://github.com/Onboardbase/onboardbasekit#readme"
+}
