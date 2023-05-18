@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/Onboardbase/obbkit/kit"
+	"github.com/Onboardbase/onboardbasekit/kit"
 	"github.com/spf13/cobra"
 )
 

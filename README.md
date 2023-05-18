@@ -1,27 +1,27 @@
 # Overview
-obbkit is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
+onboardbasekit is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
 
 ## Installation
 
 # Usage
 Run to see all the commands available
 ```
-obbkit help
+onboardbasekit help
 ```
 
 This will display information about the CLI
 
-![alt obb help](./docs/images/obbkit_help.png)
+![alt obb help](./docs/images/onboardbasekit_help.png)
 
 To get more information about a command run the command with `-h`, for example:
 ```
-obbkit init -h
+onboardbasekit init -h
 ```
 
 ## Initializing a Project
 Run the init command:
 ```
-obbkit init
+onboardbasekit init
 ```
 After providing the project name, you can select a project type:
 ![alt Init](./docs/images/obb_init.png)
@@ -35,15 +35,15 @@ After selecting a project type, you will be prompted to complete the flow for cr
 ## Initializing a Project From Git Repository
 **Note**: *You must have git installed and configure on your machine to do this*
 
-obbkit can also automatically setup a project directrly from a github repo. It will attempt to clone the repository and then configure Onboardbase inside of it. This means that you must have the permission to clone the repository if it's a private repository.
+onboardbasekit can also automatically setup a project directrly from a github repo. It will attempt to clone the repository and then configure Onboardbase inside of it. This means that you must have the permission to clone the repository if it's a private repository.
 
 To initialize from a git reposity run
 ```
-obbkit init --from-git [git-repository]
+onboardbasekit init --from-git [git-repository]
 
 e.g
 
-obbkit init --from-git https://github.com/Onboardbase/Flask-Starterkit.git
+onboardbasekit init --from-git https://github.com/Onboardbase/Flask-Starterkit.git
 ```
 
 ## Contributing

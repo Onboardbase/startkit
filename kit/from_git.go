@@ -3,7 +3,7 @@ package kit
 import (
 	"fmt"
 
-	"github.com/Onboardbase/obbkit/utils"
+	"github.com/Onboardbase/onboardbasekit/utils"
 )
 
 type InitFromGitInput struct {
