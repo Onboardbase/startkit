@@ -24,6 +24,16 @@ nfpms:
       - rpm
       - deb
 
+brews:
+  -
+   name: onboardbasekit
+   homepage: https://github.com/Onboardbase/onboardbasekit
+   tap:
+    owner: Onboardbase
+    name: homebrew-onboardbasekit
+   commit_author:
+    name: Olusola
+
 archives:
   - format: tar.gz
     # this name template makes the OS and Arch compatible with the results of uname.
