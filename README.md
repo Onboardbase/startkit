@@ -1,7 +1,7 @@
 # Overview
-onboardbasekit is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
+**Onboardbase Kit** (obbkit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
 
-## Installation
+# Installation
 
 # Usage
 Run to see all the commands available
@@ -46,12 +46,12 @@ e.g
 onboardbasekit init --from-git https://github.com/Onboardbase/Flask-Starterkit.git
 ```
 
-## Contributing
+# Contributing
 
-### Local Setup
+## Local Setup
 Clone this repo and run `go mod`. You can then start the application with `go run main.go`
 
-### Adding More Project Types
+## Adding More Project Types
 
 Support for other frameworks are welcome. The easiest way to add a new project type support is to extend our git integration.
 
