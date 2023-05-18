@@ -1,5 +1,5 @@
 # Overview
-**Onboardbase Kit** (obbkit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
+**Onboardbase Kit** (onboardbasekit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
 
 # Installation
 
