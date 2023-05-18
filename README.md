@@ -3,12 +3,12 @@
 
 # Installation
 
-Install with Go:
+## Installing with Go:
 ```
 go install github.com/Onboardbase/onboardbasekit@latest
 ```
 
-Install with Brew:
+## Installing with Brew:
 ```
 brew tap onboardbase/onboardbasekit
 
