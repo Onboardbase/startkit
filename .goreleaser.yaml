@@ -30,7 +30,7 @@ brews:
    homepage: https://github.com/Onboardbase/onboardbasekit
    tap:
     owner: Onboardbase
-    name: onboardbasekit
+    name: homebrew-onboardbasekit
    commit_author:
     name: Olusola
 
