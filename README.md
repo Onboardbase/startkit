@@ -3,6 +3,18 @@
 
 # Installation
 
+Install with Go:
+```
+go install github.com/Onboardbase/onboardbasekit@latest
+```
+
+Install with Brew:
+```
+brew tap onboardbase/onboardbasekit
+
+brew install onboardbasekit
+```
+
 # Usage
 Run to see all the commands available
 ```
@@ -11,12 +23,14 @@ onboardbasekit help
 
 This will display information about the CLI
 
-![alt obb help](./docs/images/onboardbasekit_help.png)
+![alt obb help](./docs/images/obbkit_help.png)
 
 To get more information about a command run the command with `-h`, for example:
 ```
 onboardbasekit init -h
 ```
+
+We also have artifacts for different system architechtures [here](https://github.com/Onboardbase/onboardbasekit/releases)
 
 ## Initializing a Project
 Run the init command:
