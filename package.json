@@ -6,10 +6,6 @@
   "directories": {
     "doc": "docs"
   },
-  "scripts": {
-    "postinstall": "go-npm install",
-    "preuninstall": "go-npm uninstall"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Onboardbase/onboardbasekit.git"
@@ -26,10 +22,7 @@
   "bugs": {
     "url": "https://github.com/Onboardbase/onboardbasekit/issues"
   },
-  "dependencies": {
-    "global": "^4.4.0",
-    "go-npm": "^0.1.9"
-  },
+
   "goBinary": {
     "name": "onboardbasekit",
     "path": "./bin",
