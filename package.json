@@ -1,6 +1,6 @@
 {
   "name": "@onboardbase/onboardbasekit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "**Onboardbase Kit** (onboardbasekit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.",
   "main": "index.js",
   "directories": {
@@ -21,7 +21,7 @@
     "secrets",
     "environments"
   ],
-  "author": "",
+  "author": "Olusola Samuel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Onboardbase/onboardbasekit/issues"
@@ -35,5 +35,6 @@
     "path": "./bin",
     "url": "https://github.com/Onboardbase/onboardbasekit/releases/download/v{{version}}/onboardbasekit_{{version}}_{{platform}}_{{arch}}.tar.gz"
   },
-  "homepage": "https://github.com/Onboardbase/onboardbasekit#readme"
+  "homepage": "https://github.com/Onboardbase/onboardbasekit#readme",
+  "devDependencies": {}
 }
