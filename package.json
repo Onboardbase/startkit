@@ -1,5 +1,5 @@
 {
-  "name": "@onboardbase/onboardbasekit",
+  "name": "onboardbasekit",
   "version": "0.0.5",
   "description": "**Onboardbase Kit** (onboardbasekit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.",
   "main": "index.js",
