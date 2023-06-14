@@ -1,4 +1,4 @@
-import triples from "@napi-rs/triples";
+import * as triples from "@napi-rs/triples";
 import { createWriteStream } from "fs";
 import * as fs from "fs/promises";
 import fetch from "node-fetch";
