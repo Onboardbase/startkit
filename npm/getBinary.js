@@ -46,7 +46,6 @@ function getBinary() {
   const url = `https://github.com/Onboardbase/onboardbasekit/releases/download/v${version}/onboardbasekit_${platform}_${arch}.tar.gz`;
   //   url: "https://github.com/Onboardbase/onboardbasekit/releases/download/v{{version}}/onboardbasekit_{{platform}}_{{arch}}.tar.gz",
   const name = "onboardbasekit";
-  console.log("url", url);
   return new Binary(name, url);
 }
 
