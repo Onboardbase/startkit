@@ -30,8 +30,7 @@
     "binary-install": "^1.1.0"
   },
   "scripts": {
-    "postinstall": "node npm/install.js",
-    "preinstall": "node npm/uninstall.js"
+    "postinstall": "node npm/install.js"
   },
   "files": [
     "npm/**/*"
