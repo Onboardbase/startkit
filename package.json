@@ -1,9 +1,8 @@
 {
   "name": "onboardbasekit",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "**Onboardbase Kit** (onboardbasekit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.",
   "main": "index.js",
-  "type": "module",
   "directories": {
     "doc": "docs"
   },
@@ -34,7 +33,7 @@
     "postinstall": "node npm/install.js",
     "preinstall": "node npm/uninstall.js"
   },
-"files": [
+  "files": [
     "npm/**/*"
   ],
   "bin": {
