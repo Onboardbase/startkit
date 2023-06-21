@@ -24,7 +24,8 @@ export const CONFIG = {
    *
    * @type {string}
    */
-  //   url: "https://github.com/Onboardbase/onboardbasekit/releases/download/v{{version}}/onboardbasekit_{{version}}_{{platform}}_{{arch}}.tar.gz",
+  // url: "https://github.com/Onboardbase/onboardbasekit/releases/download/v{{version}}/onboardbasekit_{{version}}_{{platform}}_{{arch}}.tar.gz",
+  url: "https://github.com/railwayapp/cli/releases/download/v{{version}}/{{bin_name}}_v{{version}}_{{triple}}.tar.gz",
 
-  url: "https://github.com/Onboardbase/onboardbasekit/archive/refs/tags/v0.0.5.tar.gz",
+  // url: "https://github.com/Onboardbase/onboardbasekit/archive/refs/tags/v0.0.5.tar.gz",
 };
