@@ -1,5 +1,6 @@
 import * as fs from "fs/promises";
 import os from "os";
+
 function getSystemInfo() {
   const type = os.type();
   const arch = os.arch();
