@@ -4,11 +4,14 @@ import os from "os";
 function getSystemInfo() {
   const type = os.type();
   const arch = os.arch();
-
+    return {
+      platform: "Windows",
+      arch: "x86_64",
+    };
   if (type === "Windows_NT" && arch === "x64") {
     return {
       platform: "Windows",
-      arch: "arm64",
+      arch: "x86_64",
     };
   }
   if (type === "Windows_NT") {
