@@ -26,3 +26,7 @@ docs/.DS_Store
 dist/
 
 node_modules/
+
+npm-install/bin/*
+
+*.tar.gz

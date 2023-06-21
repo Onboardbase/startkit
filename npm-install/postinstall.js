@@ -6,6 +6,7 @@ import { pipeline } from "stream/promises";
 import tar from "tar";
 
 import { CONFIG } from "./config.js";
+import getReleaseInfo from "./getReleaseInfo.js";
 
 async function install() {
   const packageJson = await fs.readFile("package.json").then(JSON.parse);
@@ -18,12 +19,8 @@ async function install() {
   if (version[0] === "v") version = version.slice(1);
 
   // Fetch Static Config
-  let { name: binName, path: binPath, url } = CONFIG;
-  let triple = triples.platformArchTriples[process.platform][process.arch][0];
-
-  url = url.replace(/{{triple}}/g, triple.raw);
-  url = url.replace(/{{version}}/g, version);
-  url = url.replace(/{{bin_name}}/g, binName);
+  let { name: binName, path: binPath } = CONFIG;
+  const { url } = await getReleaseInfo();
   console.log(url);
   const response = await fetch(url);
   if (!response.ok) {
