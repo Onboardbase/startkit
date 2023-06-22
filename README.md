@@ -2,6 +2,10 @@
 **Onboardbase Kit** (onboardbasekit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
 
 # Installation
+## Installing with npm
+```
+npm i -g @onboardbase/kit
+```
 
 ## Installing with Go:
 ```
