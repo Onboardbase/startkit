@@ -1,5 +1,9 @@
 name: Publish Package to npmjs
 on:
+  workflow_run:
+    workflows: ["Release Go project"]
+    types:
+      - completed
   push:
       tags:
         - "*" # triggers only if push new tag version, like `0.8.4` or else
