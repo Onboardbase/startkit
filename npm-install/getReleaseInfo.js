@@ -19,7 +19,13 @@ function getSystemInfo() {
   if (type === "Linux" && arch === "x64") {
     return {
       platform: "Linux",
-      arch: "x64",
+      arch: "arm64",
+    };
+  }
+  if (type === "Linux" && arch === "x32") {
+    return {
+      platform: "Linux",
+      arch: "i386",
     };
   }
   if (type === "Darwin" && arch === "x64") {
