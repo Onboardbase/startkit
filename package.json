@@ -1,6 +1,6 @@
 {
   "name": "@onboardbase/kit",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "**Onboardbase Kit** (startkit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.",
   "main": "index.js",
   "type": "module",
