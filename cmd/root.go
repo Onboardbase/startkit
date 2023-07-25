@@ -14,7 +14,7 @@ var rootCmd = &cobra.Command{
 	Use:     "startkit",
 	Short:   "CLI tool for generating boilerplates projects with Onboardbase completely setup.",
 	Aliases: []string{"obb"},
-	Version: "1.0.13",
+	Version: "1.0.14",
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
