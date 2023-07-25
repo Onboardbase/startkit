@@ -24,10 +24,31 @@ Run to see all the commands available
 ```
 startkit help
 ```
+This will display information about the CLI.
 
-This will display information about the CLI
+```
+> startkit help
 
-![alt obb help](./docs/images/onboarbasekit_help.png)
+CLI tool for generating boilerplates projects with Onboardbase completely setup.
+
+Usage:
+  startkit [command]
+
+Aliases:
+  startkit, obb
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  init        Initialize a new project
+
+Flags:
+  -g, --from-git string   Initialize a project from a git repository
+  -h, --help              help for startkit
+  -v, --version           version for startkit
+
+Use "startkit [command] --help" for more information about a command.
+```
 
 To get more information about a command run the command with `-h`, for example:
 ```
