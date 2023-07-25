@@ -1,5 +1,5 @@
 # Overview
-**Onboardbase Kit** (onboardbasekit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
+**Onboardbase StartKit** (startkit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.
 
 # Installation
 ## Installing with npm
@@ -9,20 +9,20 @@ npm i -g @onboardbase/kit
 
 ## Installing with Go:
 ```
-go install github.com/Onboardbase/onboardbasekit@latest
+go install github.com/Onboardbase/startkit@latest
 ```
 
 ## Installing with Brew:
 ```
-brew tap onboardbase/onboardbasekit
+brew tap onboardbase/startkit
 
-brew install onboardbasekit
+brew install startkit
 ```
 
 # Usage
 Run to see all the commands available
 ```
-onboardbasekit help
+startkit help
 ```
 
 This will display information about the CLI
@@ -31,15 +31,15 @@ This will display information about the CLI
 
 To get more information about a command run the command with `-h`, for example:
 ```
-onboardbasekit init -h
+startkit init -h
 ```
 
-We also have artifacts for different system architechtures [here](https://github.com/Onboardbase/onboardbasekit/releases)
+We also have artifacts for different system architechtures [here](https://github.com/Onboardbase/startkit/releases)
 
 ## Initializing a Project
 Run the init command:
 ```
-onboardbasekit init
+startkit init
 ```
 After providing the project name, you can select a project type:
 ![alt Init](./docs/images/obb_init.png)
@@ -53,15 +53,15 @@ After selecting a project type, you will be prompted to complete the flow for cr
 ## Initializing a Project From Git Repository
 **Note**: *You must have git installed and configure on your machine to do this*
 
-onboardbasekit can also automatically setup a project directrly from a github repo. It will attempt to clone the repository and then configure Onboardbase inside of it. This means that you must have the permission to clone the repository if it's a private repository.
+startkit can also automatically setup a project directrly from a github repo. It will attempt to clone the repository and then configure Onboardbase inside of it. This means that you must have the permission to clone the repository if it's a private repository.
 
 To initialize from a git reposity run
 ```
-onboardbasekit init --from-git [git-repository]
+startkit init --from-git [git-repository]
 
 e.g
 
-onboardbasekit init --from-git https://github.com/Onboardbase/Flask-Starterkit.git
+startkit init --from-git https://github.com/Onboardbase/Flask-Starterkit.git
 ```
 
 # Contributing

@@ -1,6 +1,6 @@
 # This is an example .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
-project_name: onboardbasekit
+project_name: startkit
 before:
   hooks:
     # You may remove this if you don't use go modules.
@@ -16,8 +16,8 @@ builds:
       - darwin
 #Configuration for building packages for rpm and deb package managers
 nfpms:
-  - package_name: onboardbasekit
-    homepage: github.com/Onboardbase/onboardbasekit
+  - package_name: startkit
+    homepage: github.com/Onboardbase/startkit
     description: |-
             CLI tool for generating boilerplates projects with Onboardbase completely setup.
     formats:
@@ -26,11 +26,11 @@ nfpms:
 
 brews:
   -
-   name: onboardbasekit
-   homepage: https://github.com/Onboardbase/onboardbasekit
+   name: startkit
+   homepage: https://github.com/Onboardbase/startkit
    tap:
     owner: Onboardbase
-    name: homebrew-onboardbasekit
+    name: homebrew-startkit
    commit_author:
     name: Olusola
 

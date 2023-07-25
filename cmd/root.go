@@ -11,7 +11,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:     "onboardbasekit",
+	Use:     "startkit",
 	Short:   "CLI tool for generating boilerplates projects with Onboardbase completely setup.",
 	Aliases: []string{"obb"},
 	Version: "1.0.9",

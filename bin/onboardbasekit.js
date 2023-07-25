@@ -6,8 +6,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const binName =
-  process.platform === "win32" ? "onboardbasekit.exe" : "onboardbasekit";
+const binName = process.platform === "win32" ? "startkit.exe" : "startkit";
 try {
   execFileSync(path.resolve(`${__dirname}/${binName}`), process.argv.slice(2), {
     stdio: "inherit",

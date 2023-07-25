@@ -1,4 +1,4 @@
-module github.com/Onboardbase/onboardbasekit
+module github.com/Onboardbase/startkit
 
 go 1.19
 

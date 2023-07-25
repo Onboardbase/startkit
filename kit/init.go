@@ -3,8 +3,8 @@ package kit
 import (
 	"fmt"
 
-	"github.com/Onboardbase/onboardbasekit/project_types"
-	"github.com/Onboardbase/onboardbasekit/utils"
+	"github.com/Onboardbase/startkit/project_types"
+	"github.com/Onboardbase/startkit/utils"
 )
 
 func Init() {

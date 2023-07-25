@@ -1,7 +1,7 @@
 {
   "name": "@onboardbase/kit",
   "version": "1.0.9",
-  "description": "**Onboardbase Kit** (onboardbasekit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.",
+  "description": "**Onboardbase Kit** (startkit) is a CLI tool for generating boilerplates with onboardbase preconfigured in them as a SecretOps infrastucture.",
   "main": "index.js",
   "type": "module",
   "directories": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Onboardbase/onboardbasekit.git"
+    "url": "git+https://github.com/Onboardbase/startkit.git"
   },
   "keywords": [
     "onboardbase",
@@ -24,9 +24,9 @@
   "author": "Olusola Samuel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Onboardbase/onboardbasekit/issues"
+    "url": "https://github.com/Onboardbase/startkit/issues"
   },
-  "homepage": "https://github.com/Onboardbase/onboardbasekit#readme",
+  "homepage": "https://github.com/Onboardbase/startkit#readme",
   "devDependencies": {},
   "dependencies": {
     "node-fetch": "^3.1.0",
@@ -40,6 +40,6 @@
     "README.md"
   ],
   "bin": {
-    "onboardbasekit": "bin/onboardbasekit.js"
+    "startkit": "bin/startkit.js"
   }
 }

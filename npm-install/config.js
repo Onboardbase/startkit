@@ -6,7 +6,7 @@ export const CONFIG = {
    * The name of the binary
    * @type {string}
    */
-  name: "onboardbasekit",
+  name: "startkit",
 
   /**
    * Where to save the unzipped files

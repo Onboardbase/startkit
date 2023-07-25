@@ -48,8 +48,8 @@ async function getReleaseInfo() {
   const { platform, arch } = getSystemInfo();
   const packageJson = await fs.readFile("package.json").then(JSON.parse);
   let version = packageJson.version;
-  const url = `https://github.com/Onboardbase/onboardbasekit/releases/download/v${version}/onboardbasekit_${platform}_${arch}.tar.gz`;
-  const name = "onboardbasekit";
+  const url = `https://github.com/Onboardbase/startkit/releases/download/v${version}/startkit_${platform}_${arch}.tar.gz`;
+  const name = "startkit";
   return { url, name };
 }
 
