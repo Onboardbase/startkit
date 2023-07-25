@@ -34,7 +34,7 @@ To get more information about a command, run the command with `-h`, for example:
 startkit init -h
 ```
 
-We also have artifacts for different system architectures [here](https://github.com/Onboardbase/onboardbasekit/releases)
+We also have artifacts for different system architectures [here](https://github.com/Onboardbase/startkit/releases)
 
 ## Initializing a Project
 Run the init command:
@@ -53,7 +53,7 @@ After selecting a project type, you will be prompted to complete the flow for cr
 ## Initializing a Project From Git Repository
 **Note**: *You must have git installed and configured on your machine to do this*
 
-onboardbasekit can also automatically set up a project directly from a GitHub repo. It will attempt to clone the repository and then configure Onboardbase inside it. This means you must have permission to clone the repository if it's private.
+startkit can also automatically set up a project directly from a GitHub repo. It will attempt to clone the repository and then configure Onboardbase inside it. This means you must have permission to clone the repository if it's private.
 
 To initialize from a git repository run
 ```
